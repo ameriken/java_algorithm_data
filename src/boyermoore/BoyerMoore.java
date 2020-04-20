@@ -21,13 +21,12 @@ public class BoyerMoore {
         while (i < textLen) {
             int j = patLen - 1;
             while (text.charAt(i) == pattern.charAt(j)) {
-                if (j == 0) {
-                    return i;
-                }
+                if (j == 0) return i;
                 i--;
                 j--;
             }
             i = i + Math.max(skip[text.charAt(i)], patLen - j);
+            //i = i + skip[text.charAt(i)];
         }
         return -1;
     }
