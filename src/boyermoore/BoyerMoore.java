@@ -25,8 +25,9 @@ public class BoyerMoore {
                 i--;
                 j--;
             }
+            // patLen - jがあることでiポインタが絶対に戻らない
+            // ようになってる
             i = i + Math.max(skip[text.charAt(i)], patLen - j);
-            //i = i + skip[text.charAt(i)];
         }
         return -1;
     }
